@@ -9,7 +9,7 @@ import {AuthGuard} from './user/auth.guard';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-      { path: 'products', loadChildren: './products/product.module#ProductModule', canActivate: [AuthGuard]},
+      { path: 'products', loadChildren: './products/product.module#ProductModule', canLoad: [AuthGuard]},
       { path: '**', component: PageNotFoundComponent}
     ], {enableTracing: false}),
   ],
